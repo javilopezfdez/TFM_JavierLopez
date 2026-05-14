@@ -10,3 +10,5 @@ Contacto: javier.lopez.fernandez@alumnos.uvigo.es
 
 import pandas as pd #Lectura de archivos EXCEL
 import matplotlib.pyplot as plt #Graficar resultados
+from openpyxl import load_workbook #Abrir/cargar archivos excel existentes, modificar celdas y guardar los cambios posteriormente.
+from openpyxl.styles import PatternFill #Permite colorear celdas del archivo EXCEL.
