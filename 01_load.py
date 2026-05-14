@@ -7,5 +7,5 @@ Contacto: javier.lopez.fernandez@alumnos.uvigo.es
 
 Última modificación: 14/05/2026
 """
-file_path = r"C:\Users\javil\Desktop\TFM\excel\SanSimon_6_decimal.xlsx" #Añadir la ruta de la hoja de cálculo después de la r.
+archivo = r"C:\Users\javil\Desktop\TFM\excel\SanSimon_6_decimal.xlsx" #Añadir la ruta de la hoja de cálculo después de la r.
 
