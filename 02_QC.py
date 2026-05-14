@@ -8,14 +8,13 @@ Contacto: javier.lopez.fernandez@alumnos.uvigo.es
 Última modificación: 14/05/2026
 """
 
-
 df = pd.read_excel(archivo)
-# Buscar el primer índice donde el barco realmente arranca
+#-----Se establece arbitrariamente el valor 2.4 de 'speed over ground' del barco, a partir del cual se empieza a trabajar-----------------
 indice_1 = df[df["sog"] >= 2.4].index[0]
 
-# Eliminar solo los datos previos al arranque
+#----------Se eliminan los valores que son previos al arranque del barco-----------------
 df_filtrado = df.loc[indice_1:].reset_index(drop=True)
 
-# Guardar resultado
+#-------Se guarda el resultado----------------
 output = r"C:\Users\javil\Desktop\TFM\excel\SanSimon_6_decimal.xlsx"
 df_filtrado.to_excel(output, index=False)
