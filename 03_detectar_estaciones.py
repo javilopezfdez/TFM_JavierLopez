@@ -18,7 +18,7 @@ indices_paradas = []
 i = 0
 
 while i < len(df): #Se detectan las estaciones (barco a una SOG<2.4 durante, mínimo, 3 minutos)
-
+#MF comment: Ojo! en algunas ocasiones, como por ejemplo hicimos en San Simón 7, hubo una muestra SIN parada. Tienes que poder considerar esa situación.
     if df.loc[i, "sog"] < 2.4:
         inicio = i
 
