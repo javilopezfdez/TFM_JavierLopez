@@ -11,5 +11,6 @@ proba: Marcos pode escribir y demás
 
 import pandas as pd #Lectura de archivos EXCEL
 import matplotlib.pyplot as plt #Graficar resultados
+import numpy as np #Funciones matemáticas simples para estadística.
 from openpyxl import load_workbook #Abrir/cargar archivos excel existentes, modificar celdas y guardar los cambios posteriormente.
 from openpyxl.styles import PatternFill #Permite colorear celdas del archivo EXCEL.
