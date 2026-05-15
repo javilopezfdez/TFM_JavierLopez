@@ -72,6 +72,8 @@ for i, idx_original in enumerate(indices_originales):
     if idx_original in indices_paradas:
         df_final.loc[i, "parada"] = True
 
+df_final["hora_hh_mm_ss"] = df_final["hora_hh_mm_ss"].dt.strftime("%H:%M:%S") #Este paso simplemente deja la columna de la hora de la medida en formato hh_mm_ss
+
 #Se guarda el EXCEL
 output = r"C:\Users\javil\Desktop\TFM\excel\SanSimon_6_decimal_paradas_filtrado.xlsx"
 df_final.to_excel(output, index=False)
