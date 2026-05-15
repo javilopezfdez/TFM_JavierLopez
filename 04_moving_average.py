@@ -12,27 +12,26 @@ Contacto: javier.lopez.fernandez@alumnos.uvigo.es
 columnas_datos = df_final.select_dtypes(include=[np.number]).columns.tolist()
 
 df_procesado_lista = []
-buffer_movimiento = []
+buffer_movimiento = [] #Separar datos que deben ser promediados de las estaciones, que deben permanecer sin tocar.
 
 for idx, row in df_final.iterrows():
     if row['parada'] == True:
-        #Si hay datos en el buffer de movimiento, procesarlos antes de la parada
+        #Si hay datos en el buffer de movimiento, procesarlos antes de la parada.
         if buffer_movimiento:
             temp_df = pd.DataFrame(buffer_movimiento)
-            # Agrupar cada 12 filas (1 minuto)
-            # Usamos floor division para crear grupos de 12
+            #Se agrupa cada minuto (12 filas)
             temp_df['grupo'] = np.arange(len(temp_df)) // 12
             
-            #Promediar grupos
+            #Se promedian los grupos.
             resumen_mov = temp_df.groupby('grupo').mean(numeric_only=True)
-            # Recuperar la columna 'parada' como False y la hora (tomamos la primera del bloque)
+            #Columna parada es falso y se recuperan las horas
             resumen_mov['parada'] = False
             resumen_mov['hora_hh_mm_ss'] = temp_df.groupby('grupo')['hora_hh_mm_ss'].first().values
             
             df_procesado_lista.append(resumen_mov)
             buffer_movimiento = []
         
-        #Añadir la parada tal cual
+        #Añadir la parada sin modificar
         df_procesado_lista.append(pd.DataFrame([row]))
     else:
         buffer_movimiento.append(row)
