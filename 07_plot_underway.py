@@ -8,9 +8,6 @@ Contacto: javier.lopez.fernandez@alumnos.uvigo.es
 Última modificación: 18/05/2026
 """
 
-import pandas as pd
-import matplotlib.pyplot as plt
-
 # -------------------------
 # Leer archivo Excel
 # -------------------------
