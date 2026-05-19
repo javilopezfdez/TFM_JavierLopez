@@ -80,3 +80,14 @@ print(f"Mean CO2 flux: {df['FCO2'].mean():.2f} mmol/m²/d")
 df['FCO2_molCm2yr'] = (df['FCO2'] / 1000) * 365.25
 
 print(f"Annual CO2 flux range: {df['FCO2_molCm2yr'].min():.4f} – {df['FCO2_molCm2yr'].max():.4f} mol/m²/yr")
+
+# ================================================================
+# 6. SAVE FCO2 TO THE SAME EXCEL FILE
+# ================================================================
+
+ruta_excel = r"C:\Users\javil\Desktop\TFM\excel\SALIDA_CON_VIENTOS.xlsx"
+
+# Sobrescribir el mismo archivo con la nueva columna FCO2
+df.to_excel(ruta_excel, index=False)
+
+print("Columna 'FCO2' añadida correctamente al Excel.")
