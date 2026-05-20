@@ -25,3 +25,4 @@ from datetime import datetime, time, timedelta
 # datetime -> fechas y horas completas
 # time -> solo horas/minutos/segundos
 # timedelta -> diferencias o sumas de tiempo
+from FCO2_functions import kCO2, sco2, prevapor #Cálculos de flujos de CO2
