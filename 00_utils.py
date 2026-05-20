@@ -5,7 +5,7 @@ Created on Wed May 13 12:21:56 2026
 @author: Javier López Fernández
 Contacto: javier.lopez.fernandez@alumnos.uvigo.es
 
-Última modificación: 19/05/2026
+Última modificación: 20/05/2026
 """
 
 import pandas as pd #Lectura de archivos EXCEL
