@@ -14,10 +14,10 @@ import numpy as np
 from pathlib import Path
 
 # Carpeta con los 24 NetCDF
-carpeta_nc = Path(r"C:\Users\javil\Desktop\TFM\nc\12mayo")
+carpeta_nc = Path(r"C:\Users\javil\Desktop\TFM\nc\23abril")
 
 # Archivo Excel de salida
-archivo_salida = Path(r"C:\Users\javil\Desktop\TFM\excel\SS7_cop.xlsx")
+archivo_salida = Path(r"C:\Users\javil\Desktop\TFM\excel\SS6_cop.xlsx")
 
 archivos = sorted(carpeta_nc.glob("*.nc"))
 
