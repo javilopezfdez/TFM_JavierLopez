@@ -19,6 +19,8 @@ var = pCO2; %Se cambia aquí para representar cualquier otra variable. Cambiar e
 
 min = min(var);
 max = max(var);
+%MF comment: OJO! min = min(var) y max = max(var) sobreescriben las funciones propias de MATLAB. 
+% Cualquier llamada posterior a min() o max() dentro del script fallará. Puedes usar nombres como vmin, vmax, etc
 
 
 % ---- Crear grilla ----

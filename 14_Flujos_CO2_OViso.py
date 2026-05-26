@@ -14,8 +14,8 @@ from FCO2_functions import kCO2, sco2, prevapor
 
 # Assume df is a pandas DataFrame with columns:
 # - 'ws': wind speed at 10 m (m/s)
-# - 'thetao_cmems': potential temperature (°C) from CMEMS
-# - 'so_cmems': salinity (PSU) from CMEMS
+# - 'thetao_cmems': potential temperature (°C)
+# - 'so_cmems': salinity (PSU)
 # - 'fCO2_sw': sea-surface fCO2 (μatm)
 # - 'fCO2_atm': atmospheric fCO2 (μatm)
 # - 'deltafCO2': pre-computed fCO2 gradient (μatm)

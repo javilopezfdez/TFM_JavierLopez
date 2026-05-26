@@ -26,7 +26,7 @@ xlabel('Longitud')
 ylabel('Latitud')
 zlabel('Batimetría (m)')
 
-title('Mapa 3D de batimetría - Ensenada de San Simón')
+title('Mapa 3D de batimetría - Ensenada de San Simón') #MF: ¿cómo te queda? 
 
 
 view(45, 35)

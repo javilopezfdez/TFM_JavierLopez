@@ -72,8 +72,12 @@ def interpolar_marea(segundos, salida):
     h1 = datos["h1"]
     h2 = datos["h2"]
 
-    altura = h1 + (h2 - h1) * (segundos - t1) / (t2 - t1)
-
+    # Interpolación cosenoidal: la marea sube/baja más lento cerca del máximo
+    # y mínimo, y más rápido en el punto medio del semiciclo (curva armónica).
+    fraccion = np.clip((segundos - t1) / (t2 - t1), 0, 1)
+    altura = h1 + (h2 - h1) * (1 - np.cos(np.pi * fraccion)) / 2
+#MF comment: reemplazaron las dos líneas de interpolación lineal por la fórmula cosenoidal con np.clip para evitar extrapolación.
+# La diferencia práctica: con la versión lineal la marea avanza a velocidad constante; ahora avanza lento al salir de pleamar/bajamar y acelera en el punto medio, que es el comportamiento real.
     return altura
 
 
