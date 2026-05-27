@@ -7,7 +7,7 @@ Contacto: javier.lopez.fernandez@alumnos.uvigo.es
 
 Última modificación: 27/05/2026
 """
-#MF comment: aunque le hayas llamado 07, ejecútalo al final del todo, cuando ya tengas los valores ajustados/calibrados, etc.
+
 
 file_path = r"C:\Users\javil\Desktop\TFM\excel\SanSimon_6_CONT_DISC.xlsx" #Se debe leer el último archivo realizado, después de los ajustes lineales a las medidas en continuo.
 df = pd.read_excel(file_path)
@@ -105,7 +105,7 @@ axs[4].plot(
     color="purple"
 )
 
-axs[4].set_ylabel("Salinity (PSU)") #MF comment: soy de la vieja escuela: nada de unidades en la salinidad! (por cierto, una vez hechos los cambios mejor si vas borrando los MF comments, Ook?)
+axs[4].set_ylabel("Salinity") 
 axs[4].grid(True)
 
 
@@ -118,8 +118,8 @@ axs[5].plot(
     linewidth=1
 )
 
-axs[5].set_ylabel("Chlorophyll (mg/L)") #MF comment: pasa todas las labels a inglés e incluye unidades.
-#axs[5].set_ylim(0,0.2) #MF: rango demasiado restrictivo
+axs[5].set_ylabel("Chlorophyll (mg/L)") 
+#axs[5].set_ylim(0,0.2)
 axs[5].set_xlabel("Time")
 axs[5].grid(True)
 
