@@ -105,7 +105,7 @@ axs[4].plot(
     color="purple"
 )
 
-axs[4].set_ylabel("Salinity (PSU)") #MF comment: pasa todas las labels a inglés e incluye unidades.
+axs[4].set_ylabel("Salinity (PSU)") #MF comment: soy de la vieja escuela: nada de unidades en la salinidad! (por cierto, una vez hechos los cambios mejor si vas borrando los MF comments, Ook?)
 axs[4].grid(True)
 
 
