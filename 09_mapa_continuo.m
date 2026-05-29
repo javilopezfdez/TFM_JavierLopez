@@ -17,10 +17,11 @@ cla = datos.cla;
 var = pCO2; %Se cambia aquí para representar cualquier otra variable. Cambiar el título en función de la variable.
 %--------------------------------------------------------------------------
 
-min = min(var);
-max = max(var);
-%MF comment: OJO! min = min(var) y max = max(var) sobreescriben las funciones propias de MATLAB. 
-% Cualquier llamada posterior a min() o max() dentro del script fallará. Puedes usar nombres como vmin, vmax, etc
+media = mean(var(:), 'omitnan');
+sd = std(var(:), 'omitnan');
+
+minv = media - 2*sd;
+maxv = media + 2*sd;      %Automatizados mínimos e máximos para unha posterior comparación entre distintos productos de ventos máis coherentes.
 
 
 % ---- Crear grilla ----
