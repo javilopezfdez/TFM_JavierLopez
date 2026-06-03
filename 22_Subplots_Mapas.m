@@ -149,9 +149,6 @@ end
         hold off
     end
 
-    %% =========================
-    % TÍTULO GLOBAL ÚNICO
-    %% =========================
     sgtitle("Obtained on " + fecha_actual, ...
         'FontWeight','bold', ...
         'FontSize',14);
