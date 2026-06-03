@@ -77,7 +77,7 @@ for j = 1:numel(orden_salidas)
         axis off
     end
 
-    % ❌ QUITADO: title("Series temporales (Python)")
+    
 
     %% =========================
     % 2) MAPAS (ABAJO)
