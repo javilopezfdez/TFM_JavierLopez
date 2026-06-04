@@ -14,14 +14,13 @@ lon_max = -8.59;
 mapa_colores_v = "winter";
 mapa_colores_f = "parula";
 
-%% =========================
-% DATOS
-%% =========================
+
 datos = readtable(archivo);
 
 %% =========================
 % FECHAS
 %% =========================
+
 fechas.SS1 = datetime(2024,10,24);
 fechas.SS2 = datetime(2024,12,10);
 fechas.SS3 = datetime(2025,2,6);
@@ -33,8 +32,9 @@ fechas.SS7 = datetime(2026,5,12);
 fecha_plot = fechas.(salida_plot);
 
 %% =========================
-% TICKS (MINUTOS)
+% TICKS (MINUTOS) SIRVE PARA QUITAR LOS GRADOS Y DEJAR SOLO LOS MINUTOS EN LOS MAPAS (ESTÉTICA)
 %% =========================
+
 lon_ticks = -(8 + [40 38 36] / 60);
 lon_labels = {'40''','38''','36'''};
 
@@ -58,9 +58,7 @@ fco2_local = datos.FCO2_molCm2yr;
 fco2_cop   = datos.FCO2_cop;
 fco2_viso   = datos.FCO2_viso;
 
-%% =========================
-% ESCALAS COMUNES
-%% =========================
+
 v = [viento_local; viento_cop; viento_viso];
 f = [fco2_local; fco2_cop; fco2_viso];
 
@@ -70,9 +68,7 @@ cmax_v = mean(v,'omitnan') + 2*std(v,'omitnan');
 cmin_f = mean(f,'omitnan') - 2*std(f,'omitnan');
 cmax_f = mean(f,'omitnan') + 2*std(f,'omitnan');
 
-%% =========================
-% FIGURA
-%% =========================
+
 figure('Color','w','Position',[20 20 3300 1800]);
 
 t = tiledlayout(3,2,'TileSpacing','compact','Padding','compact');
@@ -86,6 +82,7 @@ lon_offset = (lon_max - lon_min) * (-0.05);
 %% =========================
 % 1 WIND LOCAL
 %% =========================
+
 nexttile
 m_proj('miller','lon',[lon_min lon_max],'lat',[lat_min lat_max]);
 hold on
@@ -113,6 +110,7 @@ title('Wind Local','FontWeight','normal')
 %% =========================
 % 2 FCO2 LOCAL
 %% =========================
+
 nexttile
 m_proj('miller','lon',[lon_min lon_max],'lat',[lat_min lat_max]);
 hold on
@@ -140,6 +138,7 @@ title('FCO_2 Local','FontWeight','normal')
 %% =========================
 % 3 WIND COPERNICUS
 %% =========================
+
 nexttile
 m_proj('miller','lon',[lon_min lon_max],'lat',[lat_min lat_max]);
 hold on
@@ -167,6 +166,7 @@ title('Wind Copernicus','FontWeight','normal')
 %% =========================
 % 4 FCO2 COPERNICUS
 %% =========================
+
 nexttile
 m_proj('miller','lon',[lon_min lon_max],'lat',[lat_min lat_max]);
 hold on
@@ -194,6 +194,7 @@ title('FCO_2 Copernicus','FontWeight','normal')
 %% =========================
 % 5 WIND VISO
 %% =========================
+
 nexttile
 m_proj('miller','lon',[lon_min lon_max],'lat',[lat_min lat_max]);
 hold on
@@ -221,6 +222,7 @@ title('Wind O Viso','FontWeight','normal')
 %% =========================
 % 6 FCO2 VISO
 %% =========================
+
 nexttile
 m_proj('miller','lon',[lon_min lon_max],'lat',[lat_min lat_max]);
 hold on
