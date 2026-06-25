@@ -29,3 +29,7 @@ result=CO2SYS(AT(:),pH(:),PAR1TYPE,PAR2TYPE,...
 SAL,TEMPIN2,TEMPOUT,PRESIN,PRESOUT,SI,PO4,NH4,H2S,pHSCALE,K1K2,KSO4,KF,KB);
 pH_in = result(:,21); %pH calculado a la temperatura del agua en el momento del muestreo
 pCO2 = result(:,22); %pCO2 calculado a partir del pH y alcalinidad
+
+%MF comment: ¿tienes la función errors.m? Si es así, estaría bien que la usaras para calcular el error en pCO2. 
+% dale un error al PAR1 de 2umolkg y un error al PAR2 de 0.0055 unidades de pH. Luego, calcula el error en pCO2 usando la función errors.m que usa unos argumentos de entrada muy muy similares a los de CO2SYS.
+% Ese error podrías incluirlo luego como barras de error en la figura en la que comparas las medidas discretas contra las del sensor.
